@@ -11,6 +11,7 @@
 #include "binaryninjacore.h"
 #include "lowlevelilinstruction.h"
 #include "binaryninjaapi.h"
+#include "disass.h"
 
 using namespace BinaryNinja;
 using namespace std;
