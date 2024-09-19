@@ -280,8 +280,13 @@ virtual std::string GetIntrinsicName (uint32_t intrinsic) override {
 
 	virtual bool GetInstructionLowLevelIL(const uint8_t *data, uint64_t addr, size_t &len, LowLevelILFunction &il) override
 	{
-
-		return false;
+        insn_t *instruction;
+		if ((instruction = disassemble(data)))
+		{
+			// TODO
+		} else {
+			return false;
+		}
 		/*if (addr == 0x000d0d0c) {
 			LogInfo("%s AT 0x%x: N: %d", insn->name, (uint32_t)addr,insn->n);
 			LogInfo("%s OP[0] type: %d: value: %d", insn->name, insn->fields[0].type,insn->fields[0].value);
@@ -292,12 +297,24 @@ virtual std::string GetIntrinsicName (uint32_t intrinsic) override {
 
 	virtual bool GetInstructionInfo(const uint8_t *data, uint64_t addr, size_t maxLen, InstructionInfo &result) override
 	{
-		return false;
+		insn_t *instruction;
+		if ((instruction = disassemble(data)))
+		{
+			// TODO
+		} else {
+			return false;
+		}
 	}
 
 	virtual bool GetInstructionText(const uint8_t *data, uint64_t addr, size_t &len, std::vector<InstructionTextToken> &result) override
 	{
-		return false;
+		insn_t *instruction;
+		if ((instruction = disassemble(data)))
+		{
+			// TODO
+		} else {
+			return false;
+		}
 	}
 };
 
